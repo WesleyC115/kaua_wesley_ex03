@@ -1,8 +1,14 @@
 package com.example.demo.entity;
 
-public class Professor {
 
-    private String nome;
-    private int numeroTurma;
-    private String nomeTurma;
+import jakarta.persistence.*;
+import lombok.Data;
+
+@Data
+@Entity
+public class Professores {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    private Long numeroTurma;
+    private String nomeProfessor;
 }
