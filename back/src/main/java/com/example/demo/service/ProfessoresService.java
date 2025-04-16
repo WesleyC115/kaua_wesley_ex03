@@ -25,7 +25,7 @@ public class ProfessoresService {
         return professoresRepository.findById(id).orElse(null);
     }
 
-    public void deletarMedico(Long id) {
+    public void deletarProfessor(Long id) {
         professoresRepository.deleteById(id);
     }
 }

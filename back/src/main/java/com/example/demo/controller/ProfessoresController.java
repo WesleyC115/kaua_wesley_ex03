@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
 
 @RequestMapping("/professores")
@@ -22,5 +23,15 @@ public class ProfessoresController {
         Professores novoprofessor = professoresService.cadastrarProfessor(professor);
         return new ResponseEntity<>(novoprofessor, HttpStatus.CREATED);
     }
+    @GetMapping
+    public ResponseEntity<List> listarProfessores() {
+        return ResponseEntity.ok((professoresService.listarProfessores()));
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletarProfessor(@PathVariable Long id) {
+        professoresService.deletarProfessor(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }
 
