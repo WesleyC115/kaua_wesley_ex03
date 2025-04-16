@@ -12,6 +12,5 @@ public class Atividade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long numeroAtv;
-    private String nomeAtv;
     private String descricao;
 }
